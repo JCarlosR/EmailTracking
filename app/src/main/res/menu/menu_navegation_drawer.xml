@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_opened_emails"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Email Abiertos" />
+        <item
+            android:id="@+id/nav_clients_by_sellers"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Clientes por Vendedor" />
+        <item
+            android:id="@+id/nav_clients_by_source"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Clientes por Medio captación" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Salir" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Email Tracking</string>
+
+    <string name="title_activity_menu_navegacion">Menú principal</string>
+    <string name="action_logout">Cerrar sesión</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="error_login_response">Sus datos no son correctos</string>
+    <string name="error_sellers_response">No se ha podido obtener la lista de vendedores</string>
+
+    <string name="failure_retrofit_response">El servidor no ha respondido adecuadamente</string>
+    <string name="failure_retrofit_callback">Verifique su conexión a internet</string>
+    <string name="error_clients_by_sellers_response">No se ha podido obtener la cantidad de clientes por vendedor</string>
+</resources>
