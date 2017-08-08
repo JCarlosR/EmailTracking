@@ -1,6 +1,7 @@
 package com.example.neyser.emailtracking.ui.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -16,8 +17,10 @@ import com.example.neyser.emailtracking.R;
 import com.example.neyser.emailtracking.io.MyApiAdapter;
 import com.example.neyser.emailtracking.io.response.CategoriesResponse;
 import com.example.neyser.emailtracking.io.response.ClientsResponse;
+import com.example.neyser.emailtracking.ui.activity.ClientFormActivity;
 import com.example.neyser.emailtracking.ui.adapter.CategoryAdapter;
 import com.example.neyser.emailtracking.ui.adapter.ClientAdapter;
+import com.google.gson.Gson;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -100,6 +103,8 @@ public class ClientsFragment extends Fragment implements View.OnClickListener {
     }
 
     private void showAddClient() {
-        Toast.makeText(getContext(), "Add client", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(), ClientFormActivity.class);
+        // intent.putExtra("client", new Gson().toJson());
+        startActivity(intent);
     }
 }

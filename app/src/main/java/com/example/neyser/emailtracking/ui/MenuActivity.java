@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.neyser.emailtracking.ClientsBySource;
+import com.example.neyser.emailtracking.common.Global;
 import com.example.neyser.emailtracking.ui.fragment.CategoriesFragment;
 import com.example.neyser.emailtracking.ui.fragment.ClientsFragment;
 import com.example.neyser.emailtracking.ui.fragment.DashboardFragment;
@@ -78,6 +79,7 @@ public class MenuActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_logout) {
+            Global.saveBooleanPreference(this, "logged_in", false);
             logout();
             return true;
         }

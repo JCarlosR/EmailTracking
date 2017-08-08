@@ -5,21 +5,22 @@ import com.example.neyser.emailtracking.io.response.ClientsBySellersResponse;
 import com.example.neyser.emailtracking.io.response.ClientsBySourceResponse;
 import com.example.neyser.emailtracking.io.response.ClientsResponse;
 import com.example.neyser.emailtracking.io.response.LinksResponse;
-import com.example.neyser.emailtracking.io.response.LoginResponse;
+import com.example.neyser.emailtracking.io.response.SimpleResponse;
 import com.example.neyser.emailtracking.io.response.QuantityResponse;
 import com.example.neyser.emailtracking.io.response.SellersResponse;
-import com.example.neyser.emailtracking.model.Seller;
-
-import java.util.ArrayList;
+import com.example.neyser.emailtracking.io.response.SubCategoriesByCategoryResponse;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface MyApiService {
 
     @GET("login.php")
-    Call<LoginResponse> getLogin(
+    Call<SimpleResponse> getLogin(
             @Query("usuario") String username,
             @Query("clave") String password
     );
@@ -54,22 +55,18 @@ public interface MyApiService {
 
     @GET("links/index.php")
     Call<LinksResponse> getLinks();
-    /*
+
+    @GET("subcategories/index.php")
+    Call<SubCategoriesByCategoryResponse> getSubCategories(@Query("category_id") int category_id);
+
 
     @FormUrlEncoded
-    @POST("upload/photo")
-    Call<SimpleResponse> postPhoto(
-            @Field("image") String base64,
-            @Field("extension") String extension,
-            @Field("user_id") String user_id
+    @POST("clients/store.php")
+    Call<SimpleResponse> postNewClient(
+            @Field("first_name") String first_name,
+            @Field("last_name") String last_name,
+            @Field("email") String email,
+            @Field("sub_category_id") int sub_category_id
     );
 
-    @FormUrlEncoded
-    @POST("product")
-    Call<SimpleResponse> postNewProduct(
-            @Field("code") String code,
-            @Field("name") String name,
-            @Field("description") String description
-    );
-*/
 }

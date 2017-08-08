@@ -1,9 +1,8 @@
 package com.example.neyser.emailtracking.io.response;
 
-public class LoginResponse {
+public class SimpleResponse {
 
     private boolean success;
-
 
     public boolean isSuccess() {
         return success;

@@ -2,8 +2,13 @@ package com.example.neyser.emailtracking.common;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+
+import java.util.List;
 
 public class Global {
+
 
     public static void saveBooleanPreference(Context context, String key, boolean value) {
         SharedPreferences sharedPref = context.getSharedPreferences("global_preferences", Context.MODE_PRIVATE);
