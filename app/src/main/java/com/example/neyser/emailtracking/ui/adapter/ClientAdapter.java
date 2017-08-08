@@ -19,12 +19,12 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ViewHolder
     private Context context;
     private ArrayList<Client> mDataSet;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvClientId, tvClientFirstName, tvClientLastName, tvClientEmail;
         Button btnEditClient;
 
-        public ViewHolder(View view) {
+        ViewHolder(View view) {
             super(view);
 
             tvClientId = (TextView) view.findViewById(R.id.tvClientId);

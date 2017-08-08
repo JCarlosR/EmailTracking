@@ -17,7 +17,7 @@ public class MyApiAdapter {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(logging);
 
-        String baseUrl = "http://192.168.1.36/WS_EmailAndroid/";
+        String baseUrl = "http://192.168.1.36/WS_EmailTracking/";
 
         if (API_SERVICE == null) {
             Retrofit retrofit = new Retrofit.Builder()

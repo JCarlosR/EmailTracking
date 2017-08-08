@@ -4,6 +4,7 @@ import com.example.neyser.emailtracking.io.response.CategoriesResponse;
 import com.example.neyser.emailtracking.io.response.ClientsBySellersResponse;
 import com.example.neyser.emailtracking.io.response.ClientsBySourceResponse;
 import com.example.neyser.emailtracking.io.response.ClientsResponse;
+import com.example.neyser.emailtracking.io.response.LinkTypesResponse;
 import com.example.neyser.emailtracking.io.response.LinksResponse;
 import com.example.neyser.emailtracking.io.response.SimpleResponse;
 import com.example.neyser.emailtracking.io.response.QuantityResponse;
@@ -56,9 +57,11 @@ public interface MyApiService {
     @GET("links/index.php")
     Call<LinksResponse> getLinks();
 
+    @GET("links/types.php")
+    Call<LinkTypesResponse> getLinkTypes();
+
     @GET("subcategories/index.php")
     Call<SubCategoriesByCategoryResponse> getSubCategories(@Query("category_id") int category_id);
-
 
     @FormUrlEncoded
     @POST("clients/store.php")
@@ -67,6 +70,14 @@ public interface MyApiService {
             @Field("last_name") String last_name,
             @Field("email") String email,
             @Field("sub_category_id") int sub_category_id
+    );
+
+    @FormUrlEncoded
+    @POST("links/store.php")
+    Call<SimpleResponse> postNewLink(
+            @Field("name") String name,
+            @Field("url") String url,
+            @Field("type_id") int type_id
     );
 
 }

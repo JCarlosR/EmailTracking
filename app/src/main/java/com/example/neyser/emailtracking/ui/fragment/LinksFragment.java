@@ -1,6 +1,7 @@
 package com.example.neyser.emailtracking.ui.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -15,11 +16,14 @@ import android.widget.Toast;
 import com.example.neyser.emailtracking.R;
 import com.example.neyser.emailtracking.io.MyApiAdapter;
 import com.example.neyser.emailtracking.io.response.LinksResponse;
+import com.example.neyser.emailtracking.ui.activity.LinkFormActivity;
 import com.example.neyser.emailtracking.ui.adapter.LinkAdapter;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static android.app.Activity.RESULT_OK;
 
 public class LinksFragment extends Fragment implements View.OnClickListener {
 
@@ -94,8 +98,21 @@ public class LinksFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    private static final int REGISTER_LINK_REQUEST = 1;
+
     private void showAddLink() {
-        Toast.makeText(getContext(), "Add link", Toast.LENGTH_SHORT).show();
+        // Toast.makeText(getContext(), "Add link", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(), LinkFormActivity.class);
+        startActivityForResult(intent, REGISTER_LINK_REQUEST);
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REGISTER_LINK_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                // The link was successful registered
+                fetchLinks();
+            }
+        }
+    }
 }

@@ -28,4 +28,9 @@
     <string name="success_new_client">Cliente registrado correctamente</string>
     <string name="failure_new_client">Ocurrió un problema al intentar registrar al cliente</string>
     <string name="in_development">En desarrollo</string>
+    <string name="link_name">Nombre del enlace</string>
+    <string name="link_url">URL</string>
+    <string name="link_type">Tipo de enlace</string>
+    <string name="success_new_link">Enlace registrado correctamente</string>
+    <string name="failure_new_link">Ocurrió un problema al registrar el enlace</string>
 </resources>

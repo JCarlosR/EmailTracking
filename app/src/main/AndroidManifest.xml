@@ -29,6 +29,8 @@
         <activity android:name=".ClientsBySellers" />
         <activity android:name=".ui.activity.ClientFormActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.LinkFormActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

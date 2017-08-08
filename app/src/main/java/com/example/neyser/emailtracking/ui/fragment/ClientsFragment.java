@@ -26,6 +26,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.app.Activity.RESULT_OK;
+
 public class ClientsFragment extends Fragment implements View.OnClickListener {
 
 
@@ -102,9 +104,21 @@ public class ClientsFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    private static final int REGISTER_CLIENT_REQUEST = 1;
+
     private void showAddClient() {
         Intent intent = new Intent(getContext(), ClientFormActivity.class);
         // intent.putExtra("client", new Gson().toJson());
-        startActivity(intent);
+        startActivityForResult(intent, REGISTER_CLIENT_REQUEST);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REGISTER_CLIENT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                // The client was registered
+                fetchClients();
+            }
+        }
     }
 }
