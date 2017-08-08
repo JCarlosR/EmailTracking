@@ -13,4 +13,7 @@
     <string name="failure_retrofit_response">El servidor no ha respondido adecuadamente</string>
     <string name="failure_retrofit_callback">Verifique su conexión a internet</string>
     <string name="error_clients_by_sellers_response">No se ha podido obtener la cantidad de clientes por vendedor</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

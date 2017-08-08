@@ -16,7 +16,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FragmentDashboard extends Fragment {
+public class DashboardFragment extends Fragment {
     private TextView tvViewed, tvSent, tvClicked, tvClients;
 
     @Override

@@ -2,6 +2,7 @@ package com.example.neyser.emailtracking.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -18,8 +19,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.neyser.emailtracking.ClientsBySource;
-import com.example.neyser.emailtracking.ui.fragment.FragmentDashboard;
-import com.example.neyser.emailtracking.ui.fragment.FragmentReports;
+import com.example.neyser.emailtracking.ui.fragment.CategoriesFragment;
+import com.example.neyser.emailtracking.ui.fragment.ClientsFragment;
+import com.example.neyser.emailtracking.ui.fragment.DashboardFragment;
+import com.example.neyser.emailtracking.ui.fragment.ReportsFragment;
 import com.example.neyser.emailtracking.R;
 import com.example.neyser.emailtracking.ClientsBySellers;
 
@@ -88,16 +91,16 @@ public class MenuActivity extends AppCompatActivity
     }
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            performTransactionTo(new FragmentDashboard());
+            performTransactionTo(new DashboardFragment());
             setActionBarTitle("Dashboard");
 
         } else if (id == R.id.nav_opened_emails) {
-            performTransactionTo(new FragmentReports());
+            performTransactionTo(new ReportsFragment());
             setActionBarTitle("Emails abiertos por clientes");
 
         } else if (id == R.id.nav_clients_by_sellers) {
@@ -108,8 +111,10 @@ public class MenuActivity extends AppCompatActivity
             Intent i = new Intent(this, ClientsBySource.class);
             startActivity(i);
 
-        }  else if (id == R.id.nav_send) {
-
+        }  else if (id == R.id.nav_clients) {
+            performTransactionTo(new ClientsFragment());
+        }  else if (id == R.id.nav_categories) {
+            performTransactionTo(new CategoriesFragment());
         }
 
 

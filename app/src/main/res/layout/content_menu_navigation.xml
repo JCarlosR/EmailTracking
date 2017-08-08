@@ -15,8 +15,7 @@
         android:padding="12dp"
         android:gravity="center"
         android:text="Bienvenido a la app Email Tracking.\nSeleccione una opción del menú."
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        />
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <android.support.design.widget.FloatingActionButton
         app:elevation="0dp"

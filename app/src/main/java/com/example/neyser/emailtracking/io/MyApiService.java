@@ -1,7 +1,9 @@
 package com.example.neyser.emailtracking.io;
 
+import com.example.neyser.emailtracking.io.response.CategoriesResponse;
 import com.example.neyser.emailtracking.io.response.ClientsBySellersResponse;
 import com.example.neyser.emailtracking.io.response.ClientsBySourceResponse;
+import com.example.neyser.emailtracking.io.response.ClientsResponse;
 import com.example.neyser.emailtracking.io.response.LoginResponse;
 import com.example.neyser.emailtracking.io.response.QuantityResponse;
 import com.example.neyser.emailtracking.io.response.SellersResponse;
@@ -42,6 +44,13 @@ public interface MyApiService {
 
     @GET("clientes_por_medio.php")
     Call<ClientsBySourceResponse> getClientsBySource();
+
+    @GET("categories/index.php")
+    Call<CategoriesResponse> getCategories();
+
+    @GET("clients/index.php")
+    Call<ClientsResponse> getClients();
+
     /*
 
     @FormUrlEncoded

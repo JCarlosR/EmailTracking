@@ -28,7 +28,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class FragmentReports extends Fragment {
+public class ReportsFragment extends Fragment {
     TextView a_resultadoCC, a_resultadoCT;
     EditText a_txtApellido;
     private Button a_btnConsultarCC, a_btnCancelarCC,a_btnConsultarCT;

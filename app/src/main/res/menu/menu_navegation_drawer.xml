@@ -5,28 +5,38 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/home"
-            android:title="Inicio" />
+            android:title="Dashboard" />
         <item
             android:id="@+id/nav_opened_emails"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Email Abiertos" />
-        <item
-            android:id="@+id/nav_clients_by_sellers"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Clientes por Vendedor" />
-        <item
-            android:id="@+id/nav_clients_by_source"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Clientes por Medio captación" />
+
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Datos">
         <menu>
+            <item
+                android:id="@+id/nav_clients"
+                android:icon="@drawable/ic_group_black"
+                android:title="Clientes" />
 
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Salir" />
+                android:id="@+id/nav_categories"
+                android:icon="@drawable/ic_folder_black"
+                android:title="Categorías" />
+        </menu>
+    </item>
+
+    <item android:title="Reportes">
+        <menu>
+            <item
+                android:id="@+id/nav_clients_by_sellers"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Clientes por Vendedor" />
+            <item
+                android:id="@+id/nav_clients_by_source"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Clientes por Medio captación" />
         </menu>
     </item>
 
