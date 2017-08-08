@@ -9,7 +9,7 @@
         <item
             android:id="@+id/nav_opened_emails"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Email Abiertos" />
+            android:title="Emails abiertos" />
 
     </group>
 

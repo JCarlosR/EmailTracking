@@ -6,6 +6,7 @@ import com.example.neyser.emailtracking.io.response.ClientsBySourceResponse;
 import com.example.neyser.emailtracking.io.response.ClientsResponse;
 import com.example.neyser.emailtracking.io.response.LinkTypesResponse;
 import com.example.neyser.emailtracking.io.response.LinksResponse;
+import com.example.neyser.emailtracking.io.response.OpenedEmailsResponse;
 import com.example.neyser.emailtracking.io.response.SimpleResponse;
 import com.example.neyser.emailtracking.io.response.QuantityResponse;
 import com.example.neyser.emailtracking.io.response.SellersResponse;
@@ -79,5 +80,8 @@ public interface MyApiService {
             @Field("url") String url,
             @Field("type_id") int type_id
     );
+
+    @GET("emails/index.php")
+    Call<OpenedEmailsResponse> getOpenedEmails(@Query("last_name") String last_name);
 
 }

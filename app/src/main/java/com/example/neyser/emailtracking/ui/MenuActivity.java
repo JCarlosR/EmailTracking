@@ -24,7 +24,7 @@ import com.example.neyser.emailtracking.ui.fragment.CategoriesFragment;
 import com.example.neyser.emailtracking.ui.fragment.ClientsFragment;
 import com.example.neyser.emailtracking.ui.fragment.DashboardFragment;
 import com.example.neyser.emailtracking.ui.fragment.LinksFragment;
-import com.example.neyser.emailtracking.ui.fragment.ReportsFragment;
+import com.example.neyser.emailtracking.ui.fragment.EmailsFragment;
 import com.example.neyser.emailtracking.R;
 import com.example.neyser.emailtracking.ClientsBySellers;
 
@@ -103,7 +103,7 @@ public class MenuActivity extends AppCompatActivity
             setActionBarTitle("Dashboard");
 
         } else if (id == R.id.nav_opened_emails) {
-            performTransactionTo(new ReportsFragment());
+            performTransactionTo(new EmailsFragment());
             setActionBarTitle("Emails abiertos por clientes");
 
         } else if (id == R.id.nav_clients_by_sellers) {
