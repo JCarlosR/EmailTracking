@@ -24,6 +24,11 @@
                 android:id="@+id/nav_categories"
                 android:icon="@drawable/ic_folder_black"
                 android:title="Categorías" />
+
+            <item
+                android:id="@+id/nav_links"
+                android:icon="@drawable/ic_link_black"
+                android:title="Links" />
         </menu>
     </item>
 

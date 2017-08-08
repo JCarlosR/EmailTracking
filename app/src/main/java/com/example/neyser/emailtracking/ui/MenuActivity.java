@@ -22,6 +22,7 @@ import com.example.neyser.emailtracking.ClientsBySource;
 import com.example.neyser.emailtracking.ui.fragment.CategoriesFragment;
 import com.example.neyser.emailtracking.ui.fragment.ClientsFragment;
 import com.example.neyser.emailtracking.ui.fragment.DashboardFragment;
+import com.example.neyser.emailtracking.ui.fragment.LinksFragment;
 import com.example.neyser.emailtracking.ui.fragment.ReportsFragment;
 import com.example.neyser.emailtracking.R;
 import com.example.neyser.emailtracking.ClientsBySellers;
@@ -115,6 +116,8 @@ public class MenuActivity extends AppCompatActivity
             performTransactionTo(new ClientsFragment());
         }  else if (id == R.id.nav_categories) {
             performTransactionTo(new CategoriesFragment());
+        }  else if (id == R.id.nav_links) {
+            performTransactionTo(new LinksFragment());
         }
 
 
