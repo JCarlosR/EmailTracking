@@ -39,11 +39,11 @@
         <menu>
             <item
                 android:id="@+id/nav_clients_by_sellers"
-                android:icon="@drawable/ic_menu_slideshow"
+                android:icon="@drawable/ic_insert_chart_black"
                 android:title="Clientes por Vendedor" />
             <item
                 android:id="@+id/nav_clients_by_source"
-                android:icon="@drawable/ic_menu_manage"
+                android:icon="@drawable/ic_pie_chart_black"
                 android:title="Clientes por Medio captación" />
         </menu>
     </item>

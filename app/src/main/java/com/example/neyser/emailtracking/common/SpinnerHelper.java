@@ -6,10 +6,6 @@ import android.widget.Spinner;
 
 import java.util.List;
 
-/**
- * Created by Juan Carlos on 08/08/2017.
- */
-
 public class SpinnerHelper {
 
     public static void populate(Context context, Spinner spinnerTarget, List<String> options) {

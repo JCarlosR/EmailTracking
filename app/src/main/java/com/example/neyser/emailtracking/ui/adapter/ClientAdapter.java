@@ -40,8 +40,8 @@ public class ClientAdapter extends RecyclerView.Adapter<ClientAdapter.ViewHolder
         mDataSet = new ArrayList<>();
     }
 
-    public void addCategories(ArrayList<Client> myDataSet) {
-        mDataSet.addAll(myDataSet);
+    public void setClients(ArrayList<Client> myDataSet) {
+        mDataSet = myDataSet;
         notifyDataSetChanged();
     }
 

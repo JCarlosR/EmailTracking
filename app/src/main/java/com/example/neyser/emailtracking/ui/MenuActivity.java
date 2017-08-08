@@ -120,10 +120,16 @@ public class MenuActivity extends AppCompatActivity
 
         }  else if (id == R.id.nav_clients) {
             performTransactionTo(new ClientsFragment());
+            setActionBarTitle("Gestión de clientes");
+
         }  else if (id == R.id.nav_categories) {
             performTransactionTo(new CategoriesFragment());
+            setActionBarTitle("Gestión de categorías");
+
         }  else if (id == R.id.nav_links) {
             performTransactionTo(new LinksFragment());
+            setActionBarTitle("Gestión de enlaces");
+
         }
 
 

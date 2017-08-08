@@ -31,8 +31,8 @@ public class LinkAdapter extends RecyclerView.Adapter<LinkAdapter.ViewHolder> {
         mDataSet = new ArrayList<>();
     }
 
-    public void addLinks(ArrayList<Link> myDataSet) {
-        mDataSet.addAll(myDataSet);
+    public void setLinks(ArrayList<Link> myDataSet) {
+        mDataSet = myDataSet;
         notifyDataSetChanged();
     }
 

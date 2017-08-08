@@ -76,7 +76,7 @@ public class LinksFragment extends Fragment implements View.OnClickListener {
                 if (response.isSuccessful()) {
                     LinksResponse categoriesResponse = response.body();
                     if (categoriesResponse != null)
-                        mAdapter.addLinks(categoriesResponse.getLinks());
+                        mAdapter.setLinks(categoriesResponse.getLinks());
                 } else {
                     Toast.makeText(getContext(), R.string.failure_retrofit_response, Toast.LENGTH_SHORT).show();
                 }
