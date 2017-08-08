@@ -24,9 +24,10 @@ import com.example.neyser.emailtracking.ui.fragment.CategoriesFragment;
 import com.example.neyser.emailtracking.ui.fragment.ClientsFragment;
 import com.example.neyser.emailtracking.ui.fragment.DashboardFragment;
 import com.example.neyser.emailtracking.ui.fragment.LinksFragment;
-import com.example.neyser.emailtracking.ui.fragment.EmailsFragment;
+import com.example.neyser.emailtracking.ui.fragment.OpenedEmailsFragment;
 import com.example.neyser.emailtracking.R;
 import com.example.neyser.emailtracking.ClientsBySellers;
+import com.example.neyser.emailtracking.ui.fragment.OpenedLinksFragment;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -103,8 +104,11 @@ public class MenuActivity extends AppCompatActivity
             setActionBarTitle("Dashboard");
 
         } else if (id == R.id.nav_opened_emails) {
-            performTransactionTo(new EmailsFragment());
+            performTransactionTo(new OpenedEmailsFragment());
             setActionBarTitle("Emails abiertos por clientes");
+        } else if (id == R.id.nav_opened_links) {
+            performTransactionTo(new OpenedLinksFragment());
+            setActionBarTitle("Enlaces abiertos por clientes");
 
         } else if (id == R.id.nav_clients_by_sellers) {
             Intent i = new Intent(this, ClientsBySellers.class);

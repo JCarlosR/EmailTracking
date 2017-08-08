@@ -21,7 +21,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EmailsFragment extends Fragment implements View.OnClickListener {
+public class OpenedEmailsFragment extends Fragment implements View.OnClickListener {
 
     private TextView tvResults;
     private EditText etLastName;
@@ -33,7 +33,7 @@ public class EmailsFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_reports, container, false);
+        View view = inflater.inflate(R.layout.fragment_opened_emails, container, false);
 
         btnFilter = (Button) view.findViewById(R.id.btnFilterOpenedEmails);
         tvResults = (TextView) view.findViewById(R.id.tvResults);

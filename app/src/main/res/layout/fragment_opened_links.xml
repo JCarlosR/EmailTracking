@@ -5,14 +5,14 @@
     android:background="@color/white"
     android:orientation="vertical"
     android:padding="6dp"
-    tools:context="com.example.neyser.emailtracking.ui.fragment.EmailsFragment">
+    tools:context="com.example.neyser.emailtracking.ui.fragment.OpenedEmailsFragment">
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Correos abiertos por los clientes"
+        android:text="Enlaces visitados por los clientes"
         android:textStyle="bold" />
 
     <LinearLayout
@@ -48,7 +48,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnFilterOpenedEmails"
+        android:id="@+id/btnFilter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
