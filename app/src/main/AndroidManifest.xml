@@ -25,12 +25,13 @@
             android:name=".ui.MenuActivity"
             android:label="@string/title_activity_menu_navegacion"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ClientsBySource" />
-        <activity android:name=".ClientsBySellers" />
+        <activity android:name=".ui.activity.ClientsBySourceActivity" />
+        <activity android:name=".ui.activity.ClientsBySellersActivity" />
         <activity android:name=".ui.activity.ClientFormActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ui.activity.LinkFormActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.LinksPercentActivity" />
     </application>
 
 </manifest>

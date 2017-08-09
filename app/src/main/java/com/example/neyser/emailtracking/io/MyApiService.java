@@ -5,6 +5,7 @@ import com.example.neyser.emailtracking.io.response.ClientsBySellersResponse;
 import com.example.neyser.emailtracking.io.response.ClientsBySourceResponse;
 import com.example.neyser.emailtracking.io.response.ClientsResponse;
 import com.example.neyser.emailtracking.io.response.LinkTypesResponse;
+import com.example.neyser.emailtracking.io.response.LinksCounterResponse;
 import com.example.neyser.emailtracking.io.response.LinksResponse;
 import com.example.neyser.emailtracking.io.response.OpenedEmailsResponse;
 import com.example.neyser.emailtracking.io.response.OpenedLinksResponse;
@@ -44,11 +45,15 @@ public interface MyApiService {
     @GET("vendedores.php")
     Call<SellersResponse> getSellers();
 
-    @GET("clientes_por_vendedor.php")
+    @GET("charts/clientes_por_vendedor.php")
     Call<ClientsBySellersResponse> getClientsBySellers();
+    @GET("charts/clientes_por_vendedor.php")
+    Call<ClientsBySellersResponse> getClientsBySellers(@Query("year") int year, @Query("month") int month);
 
-    @GET("clientes_por_medio.php")
+    @GET("charts/clientes_por_medio.php")
     Call<ClientsBySourceResponse> getClientsBySource();
+    @GET("charts/clientes_por_medio.php")
+    Call<ClientsBySourceResponse> getClientsBySource(@Query("year") int year, @Query("month") int month);
 
     @GET("categories/index.php")
     Call<CategoriesResponse> getCategories();
@@ -88,4 +93,6 @@ public interface MyApiService {
     @GET("links/opened.php")
     Call<OpenedLinksResponse> getOpenedLinks();
 
+    @GET("charts/visited_links_percent.php")
+    Call<LinksCounterResponse> getLinksCounter(@Query("year") int year, @Query("month") int month);
 }

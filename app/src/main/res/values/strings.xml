@@ -33,4 +33,7 @@
     <string name="link_type">Tipo de enlace</string>
     <string name="success_new_link">Enlace registrado correctamente</string>
     <string name="failure_new_link">Ocurrió un problema al registrar el enlace</string>
+    <string name="filter">Filtrar</string>
+    <string name="year_missing">Olvidó seleccionar un año</string>
+    <string name="month_missing">Olvidó seleccionar un mes</string>
 </resources>

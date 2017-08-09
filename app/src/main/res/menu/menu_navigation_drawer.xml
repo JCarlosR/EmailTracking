@@ -45,6 +45,10 @@
                 android:id="@+id/nav_clients_by_source"
                 android:icon="@drawable/ic_pie_chart_black"
                 android:title="Clientes por Medio captación" />
+            <item
+                android:id="@+id/nav_links_percent"
+                android:icon="@drawable/ic_pie_chart_black"
+                android:title="Links de contenido visitado" />
         </menu>
     </item>
 

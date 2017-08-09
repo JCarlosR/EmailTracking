@@ -18,15 +18,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.neyser.emailtracking.ClientsBySource;
+import com.example.neyser.emailtracking.ui.activity.ClientsBySourceActivity;
 import com.example.neyser.emailtracking.common.Global;
+import com.example.neyser.emailtracking.ui.activity.LinksPercentActivity;
 import com.example.neyser.emailtracking.ui.fragment.CategoriesFragment;
 import com.example.neyser.emailtracking.ui.fragment.ClientsFragment;
 import com.example.neyser.emailtracking.ui.fragment.DashboardFragment;
 import com.example.neyser.emailtracking.ui.fragment.LinksFragment;
 import com.example.neyser.emailtracking.ui.fragment.OpenedEmailsFragment;
 import com.example.neyser.emailtracking.R;
-import com.example.neyser.emailtracking.ClientsBySellers;
+import com.example.neyser.emailtracking.ui.activity.ClientsBySellersActivity;
 import com.example.neyser.emailtracking.ui.fragment.OpenedLinksFragment;
 
 public class MenuActivity extends AppCompatActivity
@@ -111,11 +112,15 @@ public class MenuActivity extends AppCompatActivity
             setActionBarTitle("Enlaces abiertos por clientes");
 
         } else if (id == R.id.nav_clients_by_sellers) {
-            Intent i = new Intent(this, ClientsBySellers.class);
+            Intent i = new Intent(this, ClientsBySellersActivity.class);
             startActivity(i);
 
         } else if (id == R.id.nav_clients_by_source) {
-            Intent i = new Intent(this, ClientsBySource.class);
+            Intent i = new Intent(this, ClientsBySourceActivity.class);
+            startActivity(i);
+
+        } else if (id == R.id.nav_links_percent) {
+            Intent i = new Intent(this, LinksPercentActivity.class);
             startActivity(i);
 
         }  else if (id == R.id.nav_clients) {
