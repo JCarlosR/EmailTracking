@@ -45,8 +45,10 @@ public class SentVsOpenedActivity extends AppCompatActivity {
 
         // enable back button
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null)
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle("Enviados VS Abiertos");
+        }
 
         chart = (PieChart) findViewById(R.id.chartP);
 

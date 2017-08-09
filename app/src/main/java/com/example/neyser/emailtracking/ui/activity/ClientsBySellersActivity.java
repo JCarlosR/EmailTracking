@@ -45,9 +45,10 @@ public class ClientsBySellersActivity extends AppCompatActivity {
 
         // enable back button
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null)
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
-
+            actionBar.setTitle("Clientes por vendedor");
+        }
 
         barChart = (BarChart) findViewById(R.id.barChartGraph);
         tvSellers = (TextView) findViewById(R.id.tvSellers);

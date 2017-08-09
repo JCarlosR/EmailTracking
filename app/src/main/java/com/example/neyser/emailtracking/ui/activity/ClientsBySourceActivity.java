@@ -41,8 +41,10 @@ public class ClientsBySourceActivity extends AppCompatActivity {
 
         // enable back button
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null)
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle("Clientes según medio");
+        }
 
         chart = (PieChart) findViewById(R.id.chartP);
 

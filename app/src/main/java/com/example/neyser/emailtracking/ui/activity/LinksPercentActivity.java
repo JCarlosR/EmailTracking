@@ -44,8 +44,11 @@ public class LinksPercentActivity extends AppCompatActivity {
 
         // enable back button
         ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null)
+        if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setTitle("Links de contenido visitado");
+        }
+
 
         chart = (PieChart) findViewById(R.id.chartP);
 
