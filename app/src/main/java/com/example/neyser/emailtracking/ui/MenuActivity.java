@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import com.example.neyser.emailtracking.ui.activity.ClientsBySourceActivity;
 import com.example.neyser.emailtracking.common.Global;
 import com.example.neyser.emailtracking.ui.activity.LinksPercentActivity;
+import com.example.neyser.emailtracking.ui.activity.SentVsOpenedActivity;
 import com.example.neyser.emailtracking.ui.fragment.CategoriesFragment;
 import com.example.neyser.emailtracking.ui.fragment.ClientsFragment;
 import com.example.neyser.emailtracking.ui.fragment.DashboardFragment;
@@ -121,6 +122,9 @@ public class MenuActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_links_percent) {
             Intent i = new Intent(this, LinksPercentActivity.class);
+            startActivity(i);
+        } else if (id == R.id.nav_sent_vs_opened) {
+            Intent i = new Intent(this, SentVsOpenedActivity.class);
             startActivity(i);
 
         }  else if (id == R.id.nav_clients) {

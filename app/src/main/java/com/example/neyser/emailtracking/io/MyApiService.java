@@ -9,6 +9,7 @@ import com.example.neyser.emailtracking.io.response.LinksCounterResponse;
 import com.example.neyser.emailtracking.io.response.LinksResponse;
 import com.example.neyser.emailtracking.io.response.OpenedEmailsResponse;
 import com.example.neyser.emailtracking.io.response.OpenedLinksResponse;
+import com.example.neyser.emailtracking.io.response.SentVsOpenedResponse;
 import com.example.neyser.emailtracking.io.response.SimpleResponse;
 import com.example.neyser.emailtracking.io.response.QuantityResponse;
 import com.example.neyser.emailtracking.io.response.SellersResponse;
@@ -95,4 +96,7 @@ public interface MyApiService {
 
     @GET("charts/visited_links_percent.php")
     Call<LinksCounterResponse> getLinksCounter(@Query("year") int year, @Query("month") int month);
+
+    @GET("charts/opened_vs_sent.php")
+    Call<SentVsOpenedResponse> getSentVsOpened(@Query("year") int year, @Query("month") int month);
 }

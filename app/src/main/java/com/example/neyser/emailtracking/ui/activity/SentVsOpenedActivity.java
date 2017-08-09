@@ -14,6 +14,7 @@ import com.example.neyser.emailtracking.R;
 import com.example.neyser.emailtracking.common.SpinnerHelper;
 import com.example.neyser.emailtracking.io.MyApiAdapter;
 import com.example.neyser.emailtracking.io.response.LinksCounterResponse;
+import com.example.neyser.emailtracking.io.response.SentVsOpenedResponse;
 import com.example.neyser.emailtracking.model.LinkCounter;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
@@ -30,7 +31,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LinksPercentActivity extends AppCompatActivity {
+public class SentVsOpenedActivity extends AppCompatActivity {
 
     private PieChart chart;
 
@@ -50,7 +51,7 @@ public class LinksPercentActivity extends AppCompatActivity {
         chart = (PieChart) findViewById(R.id.chartP);
 
         setupFilters();
-        fetchLinksCounter();
+        fetchSentVsOpened();
     }
 
     private void setupFilters() {
@@ -103,63 +104,63 @@ public class LinksPercentActivity extends AppCompatActivity {
         }
 
         final int year = yearIndex+2015; // 1->2015
-        fetchLinksCounter(year, monthIndex);
+        fetchSentVsOpened(year, monthIndex);
     }
 
-    private void fetchLinksCounter(final int year, final int month) {
-        Call<LinksCounterResponse> call = MyApiAdapter.getApiService().getLinksCounter(year, month);
-        enqueueClientsBySource(call);
+    private void fetchSentVsOpened(final int year, final int month) {
+        Call<SentVsOpenedResponse> call = MyApiAdapter.getApiService().getSentVsOpened(year, month);
+        enqueueVsRequest(call);
     }
 
-    private void fetchLinksCounter() {
-        fetchLinksCounter(0, 0); // empty filters
+    private void fetchSentVsOpened() {
+        fetchSentVsOpened(0, 0); // empty filters
     }
 
-    private void enqueueClientsBySource(Call<LinksCounterResponse> call) {
-        call.enqueue(new Callback<LinksCounterResponse>() {
+    private void enqueueVsRequest(Call<SentVsOpenedResponse> call) {
+        call.enqueue(new Callback<SentVsOpenedResponse>() {
             @Override
-            public void onResponse(Call<LinksCounterResponse> call, Response<LinksCounterResponse> response) {
+            public void onResponse(Call<SentVsOpenedResponse> call, Response<SentVsOpenedResponse> response) {
                 if (response.isSuccessful()) {
-                    LinksCounterResponse linksResponse = response.body();
-                    if (linksResponse!=null) {
-                        ArrayList<LinkCounter> counters = linksResponse.getLinkCounters();
-                        createPieChart(counters);
+                    SentVsOpenedResponse vsResponse = response.body();
+                    if (vsResponse!=null) {
+                        createPieChart(vsResponse.getSent(), vsResponse.getOpened());
                     }
                 } else {
-                    Toast.makeText(LinksPercentActivity.this, R.string.failure_retrofit_response, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SentVsOpenedActivity.this, R.string.failure_retrofit_response, Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<LinksCounterResponse> call, Throwable t) {
-                Toast.makeText(LinksPercentActivity.this, R.string.failure_retrofit_callback, Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<SentVsOpenedResponse> call, Throwable t) {
+                Toast.makeText(SentVsOpenedActivity.this, R.string.failure_retrofit_callback, Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void createPieChart(ArrayList<LinkCounter> counters) {
+    private void createPieChart(int sent, int opened) {
         List<PieEntry> entries = new ArrayList<>();
 
-        for (LinkCounter linkCounter : counters) {
-            entries.add(
-                new PieEntry(linkCounter.getQuantity(), linkCounter.getName())
-            );
-        }
+        entries.add(
+            new PieEntry(sent, "Enviados")
+        );
+        entries.add(
+            new PieEntry(opened, "Abiertos")
+        );
 
-        PieDataSet set = new PieDataSet(entries, "Links vistos según contenido");
+
+        PieDataSet set = new PieDataSet(entries, "Enviados VS Abiertos");
         set.setColors(ColorTemplate.COLORFUL_COLORS);
 
         Description description = new Description();
-        description.setText("Links según contenido");
+        description.setText("Versus");
         chart.setDescription(description);
 
         PieData data = new PieData(set);
-        data.setValueFormatter(new PercentFormatter());
-        chart.setUsePercentValues(true);
+        // the order matters!
+        chart.setMaxAngle(180f);
+        chart.setRotationAngle(180f);
         chart.setData(data);
-        chart.setHoleRadius(0);
-        chart.setTransparentCircleRadius(5);
-        chart.setHoleColor(Color.rgb(255, 255, 255));
+
         chart.invalidate(); // refresh
     }
 
